@@ -21,7 +21,7 @@ func main() {
 	bot, err := botapi.NewBotAPI("YourAPIToken")
 	check(err)
 
-	var message = flag.String("send-message", "check", "Send message to default Chat ID")
+	var message = flag.String("send-message", "check", "Send message to specified Chat ID")
 	var id = flag.Int64("chat-id", chatID, "Specify the Telegram chat ID to send the message to")
 	flag.Parse()
 
