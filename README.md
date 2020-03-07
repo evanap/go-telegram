@@ -22,3 +22,13 @@ Options:
     --send-message The message that is going to be sent
     --help         Displays help message 
 ```
+
+### Examples
+
+```sh
+# Sends message to default chat ID
+go-telegram --send-message "Hello, world!"
+
+# Sends message to a Telegram account with ID 12357851 
+go-telegram --client-id 12357851 --send-message "Hello, world!"
+```
