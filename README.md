@@ -19,6 +19,7 @@ Usage: go-telegram [options] <parameter>
 
 Options:
     --chat-id      Specify the Telegram chat ID to which the message will be sent
+    --config       Specify the path to config file
     --send-message The message that is going to be sent
     --help         Displays help message 
 ```
@@ -31,4 +32,7 @@ go-telegram --send-message "Hello, world!"
 
 # Sends message to a Telegram account with ID 12357851 
 go-telegram --client-id 12357851 --send-message "Hello, world!"
+
+# Sends message to a Telegram account ID 12357851 with the configuration defined at ~/.config/go-telegram  
+go-telegram --config ~/.config/go-telegram --client-id 12357851 --send-message "Hello, world!"
 ```
