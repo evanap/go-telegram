@@ -36,16 +36,17 @@ func main() {
 	var defaultPath = home + "/.go-telegram/config"
 
 	var config = flag.String("config", defaultPath, "Specify the path to config file")
-	var message = flag.String("send-message", "check", "Send message to specified Chat ID")
 	var id = flag.Int64("chat-id", chatID, "Specify the Telegram chat ID to send the message to")
 	flag.Parse()
+
+	var newMsg = flag.Args()[0]
 
 	var conf = getConf(*config)
 	bot, err := botapi.NewBotAPI(conf.Config.APIToken)
 	check(err)
 	log.Printf("Authorized as %s", bot.Self.UserName)
 
-	msg := botapi.NewMessage(*id, *message)
+	msg := botapi.NewMessage(*id, newMsg)
 
 	bot.Send(msg)
 
